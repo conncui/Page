@@ -1,0 +1,92 @@
+<!DOCTYPE html><html>
+<!--代码由www.magicalcoder.com可视化布局器拖拽生成 资源请自行下载到本地-->
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>element-由www.magicalcoder.com可视化布局器生成</title>
+<link href="https://lib.baomitu.com/element-ui/2.10.1/theme-chalk/index.css" rel="stylesheet"/>
+<link href="http://lowcode.magicalcoder.com/magicalcoder/assets/drag/ui/magicalcoder/1.1.0/magicalcoder.css" rel="stylesheet"/>
+<!-- 如果要兼容ie8及以前版本 请打开注释--> <!-- <script src="http://www.magicalcoder.com/assets/ui/element/2.10.1/browser.min.js"></script><script src="http://www.magicalcoder.com/assets/ui/element/2.10.1/browser-polyfill.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/json3/3.3.3/json3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/extension/dataTool.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+<script src="https://lib.baomitu.com/element-ui/2.10.1/index.js"></script>
+<script src="http://www.magicalcoder.com/assets/js/common.js"></script>
+<script src="http://lowcode.magicalcoder.com/magicalcoder/assets/drag/ui/magicalcoder/1.1.0/magicalcoder.js"></script>
+<style>
+
+</style>
+
+</head>
+<body style="">
+<div id="magicalDragScene" class="mc-root mc-ui-absolute-pane"><template>
+	<div class="mc-echarts-sunburst" style="height: 400px; position: absolute; left: 5.81395%; top: 4.42857%;"></div>
+	<div class="mc-echarts-gauge" style="height: 400px; position: absolute; left: 54.8301%; top: 3.57143%;"></div>
+	<div class="mc-echarts-tree" style="height: 400px; position: absolute; left: 11.9857%; top: 57.8571%;"></div>
+	<el-row style="position: absolute; left: 9.74955%; top: 109.286%;">
+		<el-col :xs="24">
+			<el-card header="查询条件">
+				<el-form label-width="100px">
+					<el-form-item label="单行标题"></el-form-item>
+					<el-form-item>
+						<el-button>提交</el-button>
+					</el-form-item>
+				</el-form>
+			</el-card>
+		</el-col>
+		<el-col :xs="24">
+			<el-card>
+				<el-table :data="tableList" :fit="true" :show-header="true">
+					<el-table-column prop="id" label="列1"></el-table-column>
+					<el-table-column prop="name" label="列2"></el-table-column>
+					<el-table-column label="操作" fixed="right" width="200px">
+						<template slot-scope="scope">
+							<el-button mc-type="column-el-button" size="mini" type="primary">编辑</el-button>
+							<el-button mc-type="column-el-button" size="mini" type="danger">删除</el-button>
+						</template>
+					</el-table-column>
+				</el-table>
+				<el-pagination style="margin-left: -5px;" layout="prev,pager,next" :total="pageTotal" :current-page.sync="currentPage" :page-size="20" :pager-count="5"></el-pagination>
+			</el-card>
+		</el-col>
+	</el-row>
+</template></div>
+<script>
+//ajax库采用axios
+//调试:打开浏览器控制台(F12),在代码中某行增加 debugger 即可调试
+var vueData = {tableList : [{}],/*别删我*/
+pageTotal : 100,/*别删我*/
+currentPage : 1};
+var vueMethod = {focus : function (e) {try {_t.fastKey.focusElem(e);}catch(e) {}},/*别删我*/
+_tabClick : function(){setTimeout(function(){new McECharts().render();},200)}};
+var vueMounted = function(){}
+/*注意以上代码由系统维护,非专业人士请勿修改*/
+var myMethod = {}
+for (var key in myMethod) {
+    vueMethod[key] = myMethod[key];
+}
+var myMounted = null
+if(myMounted!==null){vueMounted=myMounted;}
+var myData = {}
+/*把您定义的数据覆盖布局器自动识别的变量,考虑到兼容性，请下载查看head中重写的assign方法*/
+Object.assign(vueData, myData);
+var _t = this;
+var Ctor = Vue.extend({
+    //提前绑定的变量
+    data: function() {
+        return vueData;
+    },
+    //页面加载完 会执行方法 可以做一些初始化操作
+    mounted: vueMounted,
+    /*当前页面绑定的方法集合 与布局器节点一一映射即可 参照element ui文档*/
+    methods: vueMethod
+});
+new Ctor().$mount('#magicalDragScene');
+//echarts自动初始化
+new McECharts().render();
+
+</script>
+</body>
+
+</html>
