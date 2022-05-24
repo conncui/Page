@@ -1,3 +1,4 @@
+
 <html>
   <head>
     <title>打开小程序</title>
@@ -77,9 +78,9 @@
             // 必填，表示是未登录模式
             identityless: true,
             // 资源方 AppID
-            resourceAppid: '小程序 AppID', // <!-- replace -->
+            resourceAppid: 'wx4c406c0a7e686f17', // <!-- replace -->
             // 资源方环境 ID
-            resourceEnv: '云开发环境 ID', // <!-- replace -->
+            resourceEnv: 'vvdaren-1gx75i3h78c23ab5', // <!-- replace -->
           })
           await c.init()
           window.c = c
@@ -101,13 +102,14 @@
 
       async function openWeapp(onBeforeJump) {
         var c = window.c
+        console.log(c)
         const res = await c.callFunction({
           name: 'public',
           data: {
             action: 'getUrlScheme',
           },
         })
-        console.warn(res)
+        console.log(res)
         if (onBeforeJump) {
           onBeforeJump()
         }
@@ -179,16 +181,16 @@
   <body>
     <div class="page full">
       <div id="public-web-container" class="hidden">
-        <p class="">正在打开 “填入你的小程序名称”...</p> <!-- replace -->
+        <p class="">正在打开 “VV直选”...</p> <!-- replace -->
         <a id="public-web-jump-button" href="javascript:" class="weui-btn weui-btn_primary weui-btn_loading" onclick="openWeapp()">
           <span id="public-web-jump-button-loading" class="weui-primary-loading weui-primary-loading_transparent"><i class="weui-primary-loading__dot"></i></span>
           打开小程序
         </a>
       </div>
       <div id="wechat-web-container" class="hidden">
-        <p class="">点击以下按钮打开 “填入你的小程序名称”</p> <!-- replace -->
+        <p class="">点击以下按钮打开 “VV直选”</p> <!-- replace -->
         <!-- 跳转小程序的开放标签。文档 https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_Open_Tag.html -->
-        <wx-open-launch-weapp id="launch-btn" username="小程序原始账号 ID（gh_ 开头的）" path="要跳转到的页面路径"> <!-- replace -->
+        <wx-open-launch-weapp id="launch-btn" username="gh_a5f3723ab8ad" path="pages/index/index/index"> <!-- replace -->
           <template>
             <button style="width: 200px; height: 45px; text-align: center; font-size: 17px; display: block; margin: 0 auto; padding: 8px 24px; border: none; border-radius: 4px; background-color: #07c160; color:#fff;">打开小程序</button>
           </template>
